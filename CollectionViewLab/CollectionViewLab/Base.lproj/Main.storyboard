@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ihB-ga-Jgn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aet-FI-x7j">
                                     <size key="itemSize" width="338" height="331"/>
@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nVM-hQ-dmi">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="countryCell" id="nVM-hQ-dmi" customClass="CountryCell" customModule="CollectionViewLab" customModuleProvider="target">
                                         <rect key="frame" x="38" y="0.0" width="338" height="331"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mi7-x9-gIU">
@@ -45,20 +45,36 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="338" height="331"/>
+                                        <connections>
+                                            <outlet property="countryImageView" destination="5fg-wY-0QT" id="xOV-UB-r8T"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eh8-fW-myK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fCD-hP-PEg"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ihB-ga-Jgn" secondAttribute="bottom" id="6d8-O3-r9e"/>
-                            <constraint firstItem="ihB-ga-Jgn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P8C-xk-deq"/>
-                            <constraint firstItem="ihB-ga-Jgn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qw0-HB-Vi5"/>
-                            <constraint firstItem="ihB-ga-Jgn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lap-1C-Kwi"/>
+                            <constraint firstAttribute="bottom" secondItem="ihB-ga-Jgn" secondAttribute="bottom" constant="20" symbolic="YES" id="Boe-jA-YZL"/>
+                            <constraint firstItem="ihB-ga-Jgn" firstAttribute="top" secondItem="eh8-fW-myK" secondAttribute="bottom" symbolic="YES" id="Mdm-Z2-hw6"/>
+                            <constraint firstItem="eh8-fW-myK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fDc-Ux-lvT"/>
+                            <constraint firstItem="ihB-ga-Jgn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g6t-Si-bJU"/>
+                            <constraint firstItem="eh8-fW-myK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ia6-9G-7AN"/>
+                            <constraint firstItem="eh8-fW-myK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qO1-tW-m21"/>
+                            <constraint firstItem="ihB-ga-Jgn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v3X-da-Ep3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qKK-00-CvP"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ihB-ga-Jgn" id="jeD-6l-Rbh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

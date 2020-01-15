@@ -14,7 +14,12 @@ class CountryCell: UICollectionViewCell {
     
     @IBOutlet weak var countryImageView: UIImageView!
     
-    public func confifireCell(with countryImage: String){
+    // to get the image i need to use the alpha2code ...
+    // because I want to get the image from the link
+    
+    
+    
+    public func confifireCell(with countryImage: countryImage){
         // assigns image to variable
         countryImageView.getImage(with: countryImage) {
             [weak self] (result) in
