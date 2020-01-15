@@ -35,10 +35,28 @@ class DetailViewController: UIViewController {
         
         
         // how does the image work again
-        // image.image =
-        
-    }
+        /*
+         image.image =
+        public func confifireCell(with countryImage: String){
+          // assigns image to variable
+         // var imagelink = "https://www.countryflags.io/be/flat/64.png"
+          countryImageView.getImage(with: "https://www.countryflags.io/\(countryImage)/flat/64.png") {
+              [weak self] (result) in
+              switch result {
+              case .failure:
+                  DispatchQueue.main.async {
+                      self?.countryImageView.image = UIImage(systemName: "exclamationmark-triangle")
+                  }
+              case .success(let image):
+                  DispatchQueue.main.async {
+                      self?.countryImageView.image = image
+                  }
+              }
+              
+          }
+        */
 
+    }
    
 
 }
