@@ -11,7 +11,7 @@ import NetworkHelper
 
 struct CountryAPIClient {
     
-    static func fetchCountries(completion: @escaping (Result<[String], AppError>) ->() ){
+    static func fetchCountries(completion: @escaping (Result<[Country], AppError>) ->() ){
         
         let countryEndpointURLString = "https://restcountries.eu/rest/v2/name/united"
         
@@ -28,8 +28,10 @@ struct CountryAPIClient {
                 completion(.failure(.networkClientError(error)))
             case .success(let data):
                 do{
-                    let result = try JSONDecoder().decode(Country.self, from: data)
+                    // remember you need to an array
+                    let result = try JSONDecoder().decode([Country].self, from: data)
                     
+                    completion(.success(result))
                    // completion(.success(result.name))
                   //  completion(.success(result))
                 } catch {

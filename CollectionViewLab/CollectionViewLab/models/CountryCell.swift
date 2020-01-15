@@ -19,9 +19,10 @@ class CountryCell: UICollectionViewCell {
     
     
     
-    public func confifireCell(with countryImage: countryImage){
+    public func confifireCell(with countryImage: String){
         // assigns image to variable
-        countryImageView.getImage(with: countryImage) {
+       // var imagelink = "https://www.countryflags.io/be/flat/64.png"
+        countryImageView.getImage(with: "https://www.countryflags.io/\(countryImage)/flat/64.png") {
             [weak self] (result) in
             switch result {
             case .failure:

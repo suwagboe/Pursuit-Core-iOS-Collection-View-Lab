@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     
     private var selectedCountry = [Country]() {
         didSet{
-            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
 }
 
@@ -24,12 +26,22 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .purple
+        getCountry()
     }
     
-    
+    private func getCountry(){
+        
+        CountryAPIClient.fetchCountries(completion: { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                print("couldn't get the data \(appError)")
+            case .success(let country):
+                self?.selectedCountry = country
+            }
+        })
+    }
 
     
-
 }
 
 extension ViewController: UICollectionViewDataSource{
@@ -46,7 +58,7 @@ extension ViewController: UICollectionViewDataSource{
         
         let country = selectedCountry[indexPath.row]
         
-        cell.confifireCell(with: country.flag)
+        cell.confifireCell(with: country.alpha2Code)
         
         return cell
     }
