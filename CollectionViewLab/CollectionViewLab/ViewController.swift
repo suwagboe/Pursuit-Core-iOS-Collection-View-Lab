@@ -41,6 +41,16 @@ class ViewController: UIViewController {
         })
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dvc = segue.destination as? DetailViewController, let indexPath = collectionView.indexPathsForSelectedItems?.first
+            else {
+            fatalError("couldnt segure properly")
+        }
+        let selected = selectedCountry[indexPath.row]
+        
+        dvc.actualCountry = selected
+        
+    }
     
 }
 

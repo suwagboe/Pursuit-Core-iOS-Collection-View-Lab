@@ -17,6 +17,7 @@
 		55566BFE23CE666C00B4B4EA /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55566BFD23CE666C00B4B4EA /* ImageKit */; };
 		55566C0123CE68D400B4B4EA /* CountryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55566C0023CE68D400B4B4EA /* CountryAPIClient.swift */; };
 		55566C0323CE6B0D00B4B4EA /* countryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55566C0223CE6B0D00B4B4EA /* countryModel.swift */; };
+		55688D4A23CFB713009D9B77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55688D4923CFB713009D9B77 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		55566BFA23CE64DB00B4B4EA /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		55566C0023CE68D400B4B4EA /* CountryAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAPIClient.swift; sourceTree = "<group>"; };
 		55566C0223CE6B0D00B4B4EA /* countryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countryModel.swift; sourceTree = "<group>"; };
+		55688D4923CFB713009D9B77 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				55566BEA23CE5EE500B4B4EA /* Main.storyboard */,
 				55566BE823CE5EE500B4B4EA /* ViewController.swift */,
+				55688D4923CFB713009D9B77 /* DetailViewController.swift */,
 				55566BFF23CE689700B4B4EA /* helper functions */,
 				55566BF923CE64B000B4B4EA /* models */,
 				55566BF823CE648B00B4B4EA /* Supporting files */,
@@ -185,6 +188,7 @@
 				55566C0123CE68D400B4B4EA /* CountryAPIClient.swift in Sources */,
 				55566BE523CE5EE500B4B4EA /* AppDelegate.swift in Sources */,
 				55566BE723CE5EE500B4B4EA /* SceneDelegate.swift in Sources */,
+				55688D4A23CFB713009D9B77 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
