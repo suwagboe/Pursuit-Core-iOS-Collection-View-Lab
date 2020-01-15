@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     private var selectedCountry = [Country]() {
         didSet{
             DispatchQueue.main.async {
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.backgroundColor = .purple
         getCountry()
+        searchBar.delegate = self
     }
     
     private func getCountry(){
@@ -49,6 +52,23 @@ class ViewController: UIViewController {
         let selected = selectedCountry[indexPath.row]
         
         dvc.actualCountry = selected
+        
+    }
+    
+}
+
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchText = searchBar.text else {
+            return
+        }
+        
+        
+        
+        searchBar.resignFirstResponder()
+        
         
     }
     
