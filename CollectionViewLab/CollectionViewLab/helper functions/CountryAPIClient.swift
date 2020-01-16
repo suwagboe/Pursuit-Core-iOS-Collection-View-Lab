@@ -13,7 +13,7 @@ struct CountryAPIClient {
     
     static func fetchCountries(searchQuerey: String, completion: @escaping (Result<[Country], AppError>) ->() ){
         
-        let countryEndpointURLString = "https://restcountries.eu/rest/v2/\(searchQuerey)/united"
+        let countryEndpointURLString = "https://restcountries.eu/rest/v2/name/\(searchQuerey)"
         
         guard let url = URL(string: countryEndpointURLString) else {
             completion(.failure(.badURL(countryEndpointURLString)))

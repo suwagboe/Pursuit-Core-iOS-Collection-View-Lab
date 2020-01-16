@@ -21,6 +21,12 @@ class ViewController: UIViewController {
             }
         }
 }
+    
+    private var searchQuerey = "" {
+        didSet{
+            collectionView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +34,18 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .purple
-        getCountry()
+        searchCountry(searchQuerey: "united")
         searchBar.delegate = self
     }
     
-    private func getCountry(){
-        
-        CountryAPIClient.fetchCountries(completion: { [weak self] (result) in
+    private func searchCountry(searchQuerey: String){
+        CountryAPIClient.fetchCountries(searchQuerey: searchQuerey, completion: { [weak self] result in
             switch result {
             case .failure(let appError):
                 print("couldn't get the data \(appError)")
             case .success(let country):
-                self?.selectedCountry = country
+                self?.selectedCountry = country.sorted { $0.name > $1.name}
+                dump(self?.selectedCountry)
             }
         })
     }
@@ -59,17 +65,33 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchText = searchBar.text else {
+                 return
+             }
+             
+             // allows for the collection to get updated
+             searchCountry(searchQuerey: searchText)
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+     
+
+        
+        
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        guard let searchText = searchBar.text else {
-            return
-        }
+//        guard let searchText = searchBar.text else {
+//            return
+//        }
         
-        
-        
+        // allows for the collection to get updated
+      //  getCountry(searchQuerey: searchText)
         searchBar.resignFirstResponder()
-        
-        
+
     }
     
 }
