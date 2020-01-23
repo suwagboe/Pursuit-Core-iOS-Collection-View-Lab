@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sH5-nA-GsT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CollectionViewLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ihB-ga-Jgn">
-                                <rect key="frame" x="0.0" y="132" width="414" height="744"/>
+                                <rect key="frame" x="0.0" y="88" width="600" height="492"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aet-FI-x7j">
                                     <size key="itemSize" width="338" height="331"/>
@@ -27,7 +26,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="countryCell" id="nVM-hQ-dmi" customClass="CountryCell" customModule="CollectionViewLab" customModuleProvider="target">
-                                        <rect key="frame" x="38" y="0.0" width="338" height="331"/>
+                                        <rect key="frame" x="131" y="0.0" width="338" height="331"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mi7-x9-gIU">
                                             <rect key="frame" x="0.0" y="0.0" width="338" height="331"/>
@@ -53,7 +52,7 @@
                                 </cells>
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eh8-fW-myK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="fCD-hP-PEg"/>
                                 </constraints>
@@ -87,7 +86,7 @@
             <objects>
                 <viewController id="30h-oz-wm7" customClass="DetailViewController" customModule="CollectionViewLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Uw-iS-1vP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EiP-Ih-1NF">
@@ -130,7 +129,7 @@
                     <connections>
                         <outlet property="countryNameLabel" destination="Uzr-Jp-hIo" id="Nwm-Tm-N80"/>
                         <outlet property="currencySignLabel" destination="yl8-ik-HNg" id="231-Hb-Fc5"/>
-                        <outlet property="image" destination="EiP-Ih-1NF" id="k8X-5s-clD"/>
+                        <outlet property="imageOfCountry" destination="EiP-Ih-1NF" id="k8X-5s-clD"/>
                         <outlet property="populationLabel" destination="tE5-aZ-hvg" id="k9Y-6J-2Cx"/>
                     </connections>
                 </viewController>

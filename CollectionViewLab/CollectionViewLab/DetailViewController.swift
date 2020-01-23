@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageOfCountry: UIImageView!
     @IBOutlet weak var populationLabel: UILabel!
     @IBOutlet weak var currencySignLabel: UILabel!
     @IBOutlet weak var countryNameLabel: UILabel!
@@ -31,30 +31,26 @@ class DetailViewController: UIViewController {
         currencySignLabel.text = thing.currencies.first?.code
         countryNameLabel.text = thing.name
         
-        
+        //thing.alpha2Code
         
         
         // how does the image work again
-        /*
-         image.image =
-        public func confifireCell(with countryImage: String){
-          // assigns image to variable
-         // var imagelink = "https://www.countryflags.io/be/flat/64.png"
-          countryImageView.getImage(with: "https://www.countryflags.io/\(countryImage)/flat/64.png") {
-              [weak self] (result) in
+        
+        imageOfCountry.getImage(with: "https://www.countryflags.io/\(thing.alpha2Code)/flat/64.png", completion: {
+              [weak self] result in
               switch result {
               case .failure:
                   DispatchQueue.main.async {
-                      self?.countryImageView.image = UIImage(systemName: "exclamationmark-triangle")
+                      self?.imageOfCountry.image = UIImage(systemName: "exclamationmark-triangle")
                   }
               case .success(let image):
                   DispatchQueue.main.async {
-                      self?.countryImageView.image = image
-                  }
+                    self?.imageOfCountry.image = image
+                }
               }
               
-          }
-        */
+          })
+        
 
     }
    

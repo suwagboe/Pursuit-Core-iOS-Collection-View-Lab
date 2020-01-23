@@ -74,14 +74,7 @@ extension ViewController: UISearchBarDelegate {
              searchCountry(searchQuerey: searchText)
         
     }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-     
 
-        
-        
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
 //        guard let searchText = searchBar.text else {
